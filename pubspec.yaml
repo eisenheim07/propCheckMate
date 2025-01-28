@@ -1,0 +1,64 @@
+name: propcheckmate
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  chopper:
+  build_runner:
+  chopper_built_value:
+  chopper_generator:
+  flutter_bloc:
+  built_collection:
+  built_value_generator:
+  json_serializable:
+
+  cupertino_icons:
+  flutter_screenutil:
+
+  bloc:
+  equatable:
+  logging:
+
+  another_flushbar:
+
+  shared_preferences:
+  image_picker:
+  intl:
+
+  geolocator:
+  permission_handler:
+
+  http:
+
+  carousel_slider:
+  custom_navigation_bar:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints:
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Poppins1
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+    - family: Poppins2
+      fonts:
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
