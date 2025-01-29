@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
         }
       },
       builder: (context, state) {
+        Size size = MediaQuery.of(context).size;
         return Scaffold(
           backgroundColor: AppColors.scaffoldColor,
           key: _scaffoldKey,
@@ -96,6 +97,79 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 if (element.isEnabled == true && element.info!.layout.toString() == 'slider') ...[
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 20 * 2.5),
+                                    height: size.height * 0.2,
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.only(
+                                            left: 20,
+                                            right: 20,
+                                            bottom: 50,
+                                          ),
+                                          height: size.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.primaryColor,
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(36),
+                                              bottomRight: Radius.circular(36),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                'PropCheckMate',
+                                                style: TextStyle(color: AppColors.whiteColor, fontSize: 22, fontWeight: FontWeight.bold),
+                                              ),
+                                              Spacer(),
+                                              Image.asset("assets/images/app_icon.png")
+                                            ],
+                                          ),
+                                        ),
+                                        Positioned(
+                                          bottom: 0,
+                                          left: 0,
+                                          right: 0,
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.symmetric(horizontal: 20),
+                                            padding: EdgeInsets.symmetric(horizontal: 20),
+                                            height: 54,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.circular(20),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  offset: Offset(0, 10),
+                                                  blurRadius: 50,
+                                                  color: AppColors.primaryColor.withOpacity(0.23),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: TextField(
+                                                    onChanged: (value) {},
+                                                    decoration: InputDecoration(
+                                                      hintText: "Search",
+                                                      hintStyle: TextStyle(
+                                                        color: AppColors.primaryColor.withOpacity(0.5),
+                                                      ),
+                                                      enabledBorder: InputBorder.none,
+                                                      focusedBorder: InputBorder.none,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Icon(Icons.search)
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                   CarouselSlider(
                                     options: CarouselOptions(
                                       height: 200,
